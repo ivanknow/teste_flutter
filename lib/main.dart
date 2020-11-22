@@ -119,19 +119,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-      MaterialApp(
+void main() => runApp(new HelloFlutterApp());
+
+class HelloFlutterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "My App",
         home: Scaffold(
-          backgroundColor: const Color(0xFFD63031),
-          body: Center(
-            child: Text(
-              'MyText',
-              textDirection: TextDirection.ltr,
-              style: TextStyle(
-                background: Paint()..color = Colors.blue,
+            appBar: AppBar(title: Text("Appbar")),
+            body: Material(
+              color: Colors.deepPurple,
+              child: Center(
+                child: Text(
+                  "Hi, all right",
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(color: Colors.white, fontSize: 36.0),
+                ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
+            )));
+  }
+}
