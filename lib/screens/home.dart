@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -39,7 +41,8 @@ class Home extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),
+            ImgWidget()
           ],
         ));
   }
@@ -57,4 +60,19 @@ class Home extends StatelessWidget {
   }
 
   double size_font = 20;
+}
+
+class ImgWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage asset1 = AssetImage('imgs/spi.png');
+    Image image = Image(
+      image: asset1,
+      width: 200.0,
+      height: 200.0,
+    );
+    return Container(
+      child: image,
+    );
+  }
 }
