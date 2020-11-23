@@ -6,18 +6,40 @@ class Home extends StatelessWidget {
     return Container(
         alignment: Alignment.center,
         color: Colors.lightBlueAccent,
-        child: Row(
+        child: Column(
           children: [
-            Text(
-              "Welcome:",
-              textDirection: TextDirection.ltr,
-              style: TextStyle(color: Colors.white, fontSize: 36.0),
+            Row(
+              children: [
+                Text(
+                  "Welcome:",
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(color: Colors.white, fontSize: size_font),
+                ),
+                Expanded(
+                  child: Text(
+                    "Ivan Ivan Ivan Ivan Ivan Ivan Ivan Ivan ",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(color: Colors.white, fontSize: size_font),
+                  ),
+                )
+              ],
             ),
-            Text(
-              "Ivan",
-              textDirection: TextDirection.ltr,
-              style: TextStyle(color: Colors.white, fontSize: 36.0),
-            ),
+            Row(
+              children: [
+                Text(
+                  "Welcome:",
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(color: Colors.white, fontSize: size_font),
+                ),
+                Expanded(
+                  child: Text(
+                    "Ivan Ivan Ivan Ivan Ivan Ivan Ivan Ivan ",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(color: Colors.white, fontSize: size_font),
+                  ),
+                )
+              ],
+            )
           ],
         ));
   }
@@ -33,4 +55,6 @@ class Home extends StatelessWidget {
     }
     return hello;
   }
+
+  double size_font = 20;
 }
