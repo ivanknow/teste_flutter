@@ -13,13 +13,13 @@ class Home extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Welcome:",
+                  "Nome:",
                   textDirection: TextDirection.ltr,
                   style: TextStyle(color: Colors.white, fontSize: size_font),
                 ),
                 Expanded(
                   child: Text(
-                    "Ivan Ivan Ivan Ivan Ivan Ivan Ivan Ivan ",
+                    "Homem Aranha",
                     textDirection: TextDirection.ltr,
                     style: TextStyle(color: Colors.white, fontSize: size_font),
                   ),
@@ -29,20 +29,21 @@ class Home extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Welcome:",
+                  "Poder:",
                   textDirection: TextDirection.ltr,
                   style: TextStyle(color: Colors.white, fontSize: size_font),
                 ),
                 Expanded(
                   child: Text(
-                    "Ivan Ivan Ivan Ivan Ivan Ivan Ivan Ivan ",
+                    "Teias e zueira sem limita",
                     textDirection: TextDirection.ltr,
                     style: TextStyle(color: Colors.white, fontSize: size_font),
                   ),
                 )
               ],
             ),
-            ImgWidget()
+            ImgWidget(),
+            OrderButton()
           ],
         ));
   }
@@ -60,6 +61,40 @@ class Home extends StatelessWidget {
   }
 
   double size_font = 20;
+}
+
+class OrderButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var button = Container(
+      margin: EdgeInsets.only(top: 50.0),
+      child: RaisedButton(
+        elevation: 5.0,
+        onPressed: () {
+          showThings(context);
+        },
+        child: Text(
+          "Manda Teia",
+          textDirection: TextDirection.ltr,
+        ),
+      ),
+    );
+    return Container(
+      child: button,
+    );
+  }
+
+  void showThings(BuildContext context) {
+    var alert = AlertDialog(
+      title: Text("O que houve?"),
+      content: Text("Vai teia!"),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        });
+  }
 }
 
 class ImgWidget extends StatelessWidget {
