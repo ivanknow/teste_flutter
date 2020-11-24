@@ -42,8 +42,8 @@ class Home extends StatelessWidget {
                 )
               ],
             ),
-            ImgWidget(),
-            OrderButton()
+            OrderButton(),
+            Expanded(child: HelloInput())
           ],
         ));
   }
@@ -108,6 +108,32 @@ class ImgWidget extends StatelessWidget {
     );
     return Container(
       child: image,
+    );
+  }
+}
+
+class HelloInput extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HelloInputState();
+  }
+}
+
+class _HelloInputState extends State<HelloInput> {
+  String name = "";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextField(
+          onChanged: (String param) {
+            setState(() {
+              name = param;
+            });
+          },
+        ),
+        Text("Hello," + name)
+      ],
     );
   }
 }
